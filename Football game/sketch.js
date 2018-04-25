@@ -1,4 +1,5 @@
 //create an empty array called balls
+let points=0;
 let balls = [];
 function setup() {
   createCanvas(1200, 650);
@@ -6,7 +7,7 @@ function setup() {
 }
 function draw(){
 
-  scoreboard();
+
 
 
   background(38, 153, 45);
@@ -28,6 +29,7 @@ function draw(){
     line(94,600,1106,600);
 
 
+  scoreboard();
 
 
 
@@ -36,6 +38,7 @@ function draw(){
 	for (let i = 0; i < balls.length; i++) {
 	    balls[i].drawBall();
         balls[i].moveBall();
+        balls[i].score();
 	  }
 }
 
@@ -84,17 +87,22 @@ class Ball {
 		this.y = this.y-5;
 	}
 
+  score(){
+     if (this.x >= 553.75 && this.x <= 646.25 && this.y >= 149 && this.y <= 151){
+         points = points + 3;
+     }
+   }
+
  }
  function scoreboard(){
-   stroke(200);
+   stroke(0);
    strokeWeight(2);
-   fill(123);
-   textSize(10);
-   text("score",100,100);
+   fill(0);
+   textSize(20);
+   text("score = " + points,100,100);
 }
-
- // function goalpost(){
- //     stroke(0);
- //     strokeWeight(10);
- //       line(500,200,700,200);
- // }
+ // function score(){
+ //    if (this.x >= 553.75 && this.x <= 646.25 && this.y >= 0 && this.y <= 150){
+ //        points = points + 3;
+ //    }
+ //  }
