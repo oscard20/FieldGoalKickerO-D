@@ -101,8 +101,3 @@ class Ball {
    textSize(20);
    text("score = " + points,100,100);
 }
- // function score(){
- //    if (this.x >= 553.75 && this.x <= 646.25 && this.y >= 0 && this.y <= 150){
- //        points = points + 3;
- //    }
- //  }
