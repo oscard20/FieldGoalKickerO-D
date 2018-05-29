@@ -29,12 +29,12 @@ function draw(){
 
 scoreboard();
 //	draw all the balls
-	for (let i = 0; i < balls.length; i++) {
-	    balls[i].drawBall();
-      balls[i].score();
 
 
-
+for (let i = 0; i < balls.length; i++) {
+    balls[i].drawBall();
+    balls[i].score();
+    balls[i].drawTriangle();
 
 
 
@@ -42,11 +42,16 @@ scoreboard();
 // if you push enter, kick the ball
       if(keyCode===13){
         balls[i].kickBall();
+        
 
 
-      }
+}
 
-	  }
+}
+
+
+
+
 }
 
 function keyPressed(){
@@ -54,6 +59,7 @@ function keyPressed(){
   if (keyCode === 32){
      let  b = new Ball(random(400,800),random(400,600),0);
      balls.push(b);
+      console.log(balls);
 
    }
    //when you push the left arrow, aim left
@@ -82,11 +88,11 @@ class Ball {
 	}
   drawTriangle(){  // draw a triangle on the screen at x,y
      stroke(0);
-     fill("red");
+     fill("black");
      push();//save canvas state
      translate(this.x,this.y); //translate to this.x, this.y
      rotate(this.angle/PI); // rotate
-     triangle(0, 0, 10, -20, 20, 0); // draw the triangle at 0,0- because you've moved the center
+     triangle(-10, -30, 0, -50, 10, -30); // draw the triangle at 0,0- because you've moved the center
      pop(); // pop back to normal
 
 }
@@ -96,6 +102,7 @@ class Ball {
            points = points + 3;
        }
      }
+
 
   drawBall(){// draw a football on the screen at x,y
     		stroke(0);
