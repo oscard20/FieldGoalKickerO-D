@@ -42,7 +42,11 @@ for (let i = 0; i < balls.length; i++) {
 // if you push enter, kick the ball
       if(keyCode===13){
         balls[i].kickBall();
+<<<<<<< HEAD
         this.x = this.x+(random(-20,20),0);
+=======
+        
+>>>>>>> ff58a796f31027fa5cafd0ae30c89dd0be6fb515
 
 
 }
